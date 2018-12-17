@@ -1,0 +1,6 @@
+{%- load_yaml as base_config %}
+pyenv:
+  git_repo: https://github.com/pyenv/pyenv.git
+  install_folder: .pyenv
+{%- endload %}
+{%- set config = salt['pillar.get']('pyenv', base_config.pyenv, merge=true) %}
